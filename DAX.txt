@@ -1,0 +1,13 @@
+%_of_Claims_to_#_policies = 
+CALCULATE(
+    DIVIDE(
+        COUNTROWS(FILTER('Stable Home Insurance - Dataset', 'Stable Home Insurance - Dataset'[CLAIM3YEARS] = "Y")),
+        COUNTROWS('Stable Home Insurance - Dataset')
+    )
+)
+
+
+Claims_is_No = CALCULATE(COUNT('Stable Home Insurance - Dataset'[CLAIM3YEARS]), 'Stable Home Insurance - Dataset'[CLAIM3YEARS] = "N")
+
+
+Claims_is_YES = CALCULATE(COUNT('Stable Home Insurance - Dataset'[CLAIM3YEARS]), 'Stable Home Insurance - Dataset'[CLAIM3YEARS] = "Y")
